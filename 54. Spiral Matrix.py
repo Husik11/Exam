@@ -22,7 +22,9 @@ def spiralOrder(matrix):
         for j in range(n - 1):
             if 0 < i < m - 2 and 0 < j < n:
                 z.append(matrix[i][j])
-            elif i == m - 2 and 0 < j < n - 1:
+    for i in range(m - 1, 0, -1):
+        for j in range(n - 2, -1, -1):
+            if i == m - 2 and 0 < j < n - 1:
                 z.append(matrix[i][j])
     return z
 print(spiralOrder(matrix))
