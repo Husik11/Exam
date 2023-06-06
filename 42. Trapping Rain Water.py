@@ -17,6 +17,7 @@ height = [4, 2, 0, 3, 2, 5]
 def trap(height):
     if not height:
         return 0
+<<<<<<< HEAD
     l = 0
     r = len(height) - 1
     leftMax = height[l]
@@ -32,5 +33,16 @@ def trap(height):
             rightMax = max(rightMax, height[r])
             sum += rightMax - height[r]
     return sum
+=======
+    w_trap = 0
+    n = len(height)
+    for i in range(1, n - 1):
+        left_max = max(height[:i])
+        right_max = max(height[i + 1:])
+        min_height = min(left_max, right_max)
+        if min_height > height[i]:
+            w_trap += min_height - height[i]
+    return w_trap
+>>>>>>> 370579feabe828f39f2d0ec70c192c6aab2c723f
 print(trap(height))
 
